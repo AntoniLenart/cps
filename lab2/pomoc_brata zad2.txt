@@ -1,0 +1,43 @@
+Ten kod w języku Matlab generuje macierz analizy (A) oraz macierz syntezy (S) dla dyskretnej transformaty kosinusowej typu II (DCT-II). Następnie sprawdza, czy iloczyn macierzy S i A daje macierz identycznościową. Wykonuje również analizę i synteze sygnału losowego oraz rekonstrukcję sygnału. Na końcu oblicza błąd rekonstrukcji i błąd transformacji.
+
+Oto krótkie wyjaśnienie każdej części kodu:
+
+1. `clear all;`, `close all;`, `clc;`: Czyszczą wszystkie zmienne, zamknięte wszystkie figury i wyczyścić konsolę.
+
+2. Inicjalizacja parametrów:
+   - `N = 20;`: Długość sygnału.
+   - `n = 0:N-1;`: Wektor próbek czasowych.
+   - `k = 0:N-1;`: Wektor indeksów częstotliwościowych.
+
+3. Inicjalizacja wag:
+   - `s0 = sqrt(1/N);`: Waga dla zerowej częstotliwości.
+   - `sk = sqrt(2/N);`: Waga dla pozostałych częstotliwości.
+
+4. Generowanie macierzy analizy A:
+   - Pętle `for` obliczają wartości elementów macierzy A zgodnie z definicją DCT-II.
+   - Po obliczeniu wiersza, jest on normalizowany.
+
+5. Generowanie macierzy odwrotnej S:
+   - Macierz S jest po prostu transponowaną macierzą A.
+
+6. Sprawdzenie, czy SA == I:
+   - Sprawdza, czy iloczyn macierzy S i A jest równy macierzy identycznościowej.
+
+7. Analiza i synteza sygnału losowego:
+   - Losowy sygnał wejściowy `x` jest tworzony.
+   - Wykonuje się analizę sygnału za pomocą macierzy A.
+
+8. Rekonstrukcja sygnału:
+   - Sygnał jest odtwarzany za pomocą macierzy S i wyniku analizy.
+
+9. Sprawdzenie, czy transformacja ma właściwość perfekcyjnej rekonstrukcji:
+   - Porównuje zrekonstruowany sygnał `xs` z oryginalnym sygnałem `x`.
+
+10. Obliczenie błędu rekonstrukcji:
+    - Norma różnicy między zrekonstruowanym sygnałem a oryginalnym sygnałem.
+
+11. Obliczenie błędu transformacji:
+    - Norma różnicy między iloczynem macierzy S i A a macierzą identycznościową.
+
+12. Wyświetlenie wyników:
+    - Wyświetla błąd rekonstrukcji i błąd transformacji.

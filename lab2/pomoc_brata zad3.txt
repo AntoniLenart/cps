@@ -1,0 +1,32 @@
+Kod przedstawiony jest w MATLABie i zawiera analizę i rekonstrukcję sygnału za pomocą dyskretnej transformaty kosinusowej (DCT) i odwrotnej dyskretnej transformaty kosinusowej (IDCT). Poniżej znajdziesz szczegółowe wyjaśnienia poszczególnych części kodu:
+
+1. Inicjalizacja zmiennych:
+   - `N`: liczba próbek
+   - `fs`: częstotliwość próbkowania
+   - `st`: krok próbkowania (odwrotność częstotliwości próbkowania)
+   - `T`: czas trwania próbkowania
+   - `sample`: przedział czasowy próbkowania
+
+2. Definicja częstotliwości i amplitud sinusów oraz ich sumowanie w sygnale `x`.
+
+3. Tworzenie wykresu sygnałów sinusoidalnych (`s1`, `s2`, `s3`) oraz zsumowanego sygnału `x`.
+
+4. Budowanie macierzy transformacji DCT `A` i IDCT `S` dla 100 próbek.
+
+5. Wyświetlanie wartości wszystkich wierszy macierzy `A` i kolumn macierzy `S` w pętli.
+
+6. Analiza sygnału `x` poprzez jego transformację za pomocą macierzy `A`.
+
+7. Porównanie współczynników transformacji `y` z amplitudami składowych sygnału `x`.
+
+8. Rekonstrukcja sygnału za pomocą transformacji odwrotnej IDCT.
+
+9. Porównanie oryginalnego sygnału `x` z jego rekonstrukcją `rcnst`.
+
+10. Zmiana częstotliwości sygnału `x` poprzez zmianę częstotliwości `f2` na 105 Hz.
+
+11. Powtórzenie analizy, rekonstrukcji i porównania sygnałów dla zmienionych parametrów.
+
+12. Kolejne zmiany częstotliwości sinusów oraz ich analiza, rekonstrukcja i porównanie sygnałów.
+
+Kod ten przeprowadza eksperymenty zmieniając parametry sygnałów sinusoidalnych, a następnie analizuje, jak te zmiany wpływają na współczynniki transformacji oraz na rekonstrukcję sygnału.

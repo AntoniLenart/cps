@@ -1,0 +1,33 @@
+Ten kod w języku MATLAB wykonuje kilka operacji związanych z generowaniem i analizą macierzy zawierającej wzorce kosinusowe, a także oblicza błąd przy odwrotnej transformaty kosinusowej.
+
+Oto kroki wykonywane przez kod:
+
+1. Inicjalizacja środowiska:
+   - Czyszczenie zmiennych (`clear all`)
+   - Zamknięcie wszystkich otwartych figur (`close all`)
+   - Wyczyszczenie konsoli (`clc`)
+
+2. Generowanie macierzy A zawierającej wzorce kosinusowe:
+   - Ustalanie rozmiaru macierzy (`N = 20`)
+   - Inicjalizacja macierzy zerami (`A = zeros(N,N)`)
+   - Dla każdego kolumnowego indeksu `k` i wierszowego indeksu `n`:
+     - Obliczanie elementu macierzy `A(k,n)` zgodnie z formułą dla wzorca kosinusowego
+
+3. Sprawdzanie, czy wektory w wierszach macierzy A są ortonormalne:
+   - Tworzenie macierzy B jako macierzy wynikowej
+   - Ustawienie tolerancji (`tol`) dla bliskich zeru wartości
+   - Dla każdej pary wierszowej `l` i `m`:
+     - Obliczenie iloczynu skalarnego `prod1` dwóch wektorów `w1` i `w2`
+     - Jeśli `prod1` jest bliskie zeru (zgodnie z tolerancją) i `l` nie równa się `m`, to para wektorów jest uznawana za ortonormalną
+     - W przeciwnym razie, para wektorów jest uznawana za nie ortonormalną
+
+4. Obliczenie odwrotnej transformaty kosinusowej (IDCT):
+   - Inicjalizacja macierzy `reconstructed_A` zerami
+   - Dla każdej pary `k` i `n`:
+     - Wykorzystanie zagnieżdżonych pętli do obliczenia sumy elementów macierzy zgodnie z formułą odwrotnej transformaty kosinusowej
+
+5. Obliczenie błędu:
+   - Obliczenie normy różnicy między oryginalną macierzą A a zrekonstruowaną macierzą `reconstructed_A`
+   - Wyświetlenie błędu
+
+Kod ten jest przykładem zastosowania transformacji kosinusowej oraz analizy ortogonalności wzorców kosinusowych. W szczególności sprawdza, czy wygenerowane wzorce są ze sobą ortonormalne oraz oblicza odwrotną transformatę kosinusową dla tych wzorców, aby zbadać, czy można odzyskać oryginalne wzorce z ich reprezentacji.
