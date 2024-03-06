@@ -1,3 +1,4 @@
+clear all; close all; clc
 % Parametry
 fs = 100; % Częstotliwość próbkowania [Hz]
 t = 0:1/fs:1; % Wektor czasu dla 1 sekundy

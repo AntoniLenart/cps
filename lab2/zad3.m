@@ -5,7 +5,7 @@ fs = 1000;  % czestotliwosc probkowania
 st = 1/fs;  % krok próbkowania
 T = 0.1;    % czas trwania probkowania (100 probek dla 1000Hz = 0.1s)
 
-sample = st:st:T; % przedział czasowy próbkowania
+sample = 0:st:T; % przedział czasowy próbkowania
 
 % Czestotliwosci sinusoid 
 f1 = 50; 
