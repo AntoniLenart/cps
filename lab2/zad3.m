@@ -1,4 +1,4 @@
-clear all; close all;
+clear all; close all; clc
 % Dane
 N = 100;    % liczba probek
 fs = 1000;  % czestotliwosc probkowania

@@ -1,8 +1,8 @@
-% Generowanie macierzy analizy A transformaty DCT-II
 clear all;
 close all;
 clc;
 
+% Generowanie macierzy analizy A transformaty DCT-II
 N = 20;
 n = 0:N-1;
 k = 0:N-1;

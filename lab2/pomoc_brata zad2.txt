@@ -1,7 +1,5 @@
 Ten kod w języku Matlab generuje macierz analizy (A) oraz macierz syntezy (S) dla dyskretnej transformaty kosinusowej typu II (DCT-II). Następnie sprawdza, czy iloczyn macierzy S i A daje macierz identycznościową. Wykonuje również analizę i synteze sygnału losowego oraz rekonstrukcję sygnału. Na końcu oblicza błąd rekonstrukcji i błąd transformacji.
 
-Oto krótkie wyjaśnienie każdej części kodu:
-
 1. `clear all;`, `close all;`, `clc;`: Czyszczą wszystkie zmienne, zamknięte wszystkie figury i wyczyścić konsolę.
 
 2. Inicjalizacja parametrów:
