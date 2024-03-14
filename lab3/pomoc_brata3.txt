@@ -1,0 +1,25 @@
+Importuje potrzebne biblioteki: NumPy, matplotlib.pyplot oraz windows z scipy.signal, które zawiera funkcje generujące różne rodzaje okien.
+
+Ustala parametry próbkowania (fs), liczność próbek (N), krok próbkowania (st) oraz czas trwania próbkowania (T).
+
+Generuje próbkę czasu sample w zadanym przedziale.
+
+Określa częstotliwości f1 i f2, amplitudy A1 i A2 oraz kąty fazowe p1 i p2 dla sinusów.
+
+Tworzy funkcje s1(t) i s2(t), które reprezentują sinusy o określonych parametrach.
+
+Tworzy sygnał x(t) jako sumę s1(t) i s2(t).
+
+Oblicza dyskretną transformatę Fouriera (DtFT) sygnału x(t) za pomocą podwójnej pętli, sumując odpowiednio ważone sinusy dla różnych częstotliwości.
+
+Dzieli wynik przez liczbę próbek (N) dla normalizacji.
+
+Dzieli obliczone widmo na część rzeczywistą (XRe), część urojoną (XIm), moduł (XA) i fazę (XP).
+
+Rysuje wykresy dla poszczególnych części widma (część rzeczywista, część urojona, moduł i faza) w zależności od częstotliwości.
+
+Tworzy różne rodzaje okien: prostokątne, Hamminga, Blackmana oraz okno Czebyszewa o różnych parametrach.
+
+Oblicza DtFT dla sygnału pomnożonego przez każde z okien.
+
+Rysuje wykres amplitudy widma dla różnych okien, pozwalając na porównanie ich wpływu na transformatę sygnału.

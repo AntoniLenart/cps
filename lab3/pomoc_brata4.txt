@@ -1,0 +1,23 @@
+Importuje biblioteki scipy.io do wczytania pliku .mat, NumPy do obliczeń numerycznych i matplotlib.pyplot do rysowania wykresów.
+
+Wczytuje plik 'lab_03.mat', który zawiera zmienną 'x_7' (prawdopodobnie sygnał) za pomocą funkcji scipy.io.loadmat.
+
+Określa numer wektora (vector_number) jako resztę z dzielenia 417670 przez 16, z dodatkowym 1. To wydaje się być indeksem do wybrania jednego z wektorów z pliku MAT.
+
+Wybiera sygnał 'x_7' i przechowuje go w zmiennej 'signal'.
+
+Określa stałe: K (liczba ramek), M (liczba próbek pomiędzy ramkami) i N (liczba próbek w każdej ramce).
+
+Dzieli sygnał 'signal' na rameczki o długości N+M, zaczynając od pozycji M i kończąc na pozycji (N+M) * (K+1).
+
+Tworzy macierz transformacji A dla N próbek, obliczając wartości na podstawie stałej W_N (pierwiastek jednostkowy z jedności zespolonej).
+
+Oblicza transformatę Fouriera dla każdej ramki za pomocą macierzy A.dot(frame) i przechowuje wyniki w tablicy X_array.
+
+Tworzy oś częstotliwości frequency_axis.
+
+Rysuje wykresy amplitudy dla każdej ramki na osobnych subplotach, wykorzystując funkcję subplots z biblioteki matplotlib.
+
+Na końcu wyświetla wykresy.
+
+Wypisuje częstotliwości, dla których amplituda przekracza 1 w pierwszej ramce.

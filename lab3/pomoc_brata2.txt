@@ -1,0 +1,23 @@
+Importuje biblioteki NumPy i matplotlib.pyplot.
+
+Ustala liczbę próbek N oraz wyznacza wartość W_N, która jest pierwiastkiem jednostkowym z jedności zespolonej o jednym obrocie.
+
+Tworzy macierz A o wymiarach NxN, która będzie macierzą transformacji DFT. Każdy jej element jest inicjalizowany na jedynkę podzieloną przez pierwiastek z N.
+
+Następnie pętle obliczające wartości macierzy A na podstawie wartości W_N i indeksów k oraz n.
+
+Definiuje parametry sygnału, takie jak częstotliwości, amplitudy i fazy.
+
+Tworzy sygnał x(t) na podstawie zdefiniowanych parametrów.
+
+Oblicza DFT sygnału x(t) za pomocą mnożenia macierzy A przez sygnał x_t.
+
+Tworzy nowy sygnał x_z, który jest rozszerzeniem sygnału x_t poprzez dodanie zer (w tym przypadku 100 zer).
+
+Oblicza DFT rozszerzonego sygnału x_z za pomocą funkcji fft z biblioteki numpy.
+
+Wykonuje alternatywną metodę obliczania DFT za pomocą sumowania wyrażeń z transformacji Fouriera dla różnych częstotliwości.
+
+Rysuje wykresy amplitudy dla trzech różnych metod obliczania DFT: za pomocą macierzy A, funkcji fft i sumowania wyrażeń.
+
+Na wykresie dodawane są punkty dla amplitudy obliczonej za pomocą macierzy A (zielone punkty), funkcji fft (niebieskie x) oraz alternatywnej metody (czarna linia).

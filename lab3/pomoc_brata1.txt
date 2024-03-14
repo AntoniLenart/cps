@@ -1,0 +1,27 @@
+Importuje biblioteki niezbędne do działania programu: NumPy do obliczeń numerycznych oraz matplotlib do generowania wykresów.
+
+Definiuje funkcję x(t), która oblicza sygnał x(t) na podstawie zadanych parametrów A1, f1, phi1, A2, f2, phi2. Sygnał ten jest sumą dwóch kosinusoid o różnych amplitudach, częstotliwościach i fazach.
+
+Ustala parametry sygnału oraz częstotliwość próbkowania (fs) i liczbę próbek (N).
+
+Tworzy funkcję DFT_matrix(N), która generuje macierz transformacji DFT dla danej liczby próbek N.
+
+Generuje wektor czasu t na podstawie liczby próbek i częstotliwości próbkowania.
+
+Oblicza sygnał x(t) na podstawie funkcji x(t) i parametrów.
+
+Oblicza dyskretną transformatę Fouriera (DFT) sygnału x(t) za pomocą macierzy transformacji A.
+
+Oblicza część rzeczywistą, część urojoną, moduł oraz fazę sygnału X.
+
+Rysuje wykresy części rzeczywistej, części urojonej, modułu i fazy sygnału X w zależności od częstotliwości.
+
+Wykonuje operację odwrotnej DFT, aby zrekonstruować sygnał xr na podstawie macierzy rekonstrukcji B.
+
+Porównuje oryginalny sygnał x(t) z zrekonstruowanym sygnałem xr(t) i rysuje wykresy porównawcze.
+
+Następnie wykonuje te same operacje, ale zamiast obliczać DFT przez mnożenie przez macierz A, używa funkcji fft z biblioteki numpy.
+
+W kolejnym etapie zmienia częstotliwość jednej z kosinusoid na f1=125 Hz i ponownie oblicza oraz wyświetla widmo sygnału.
+
+Kod analizuje sygnał x(t), oblicza jego DFT za pomocą różnych metod, rekonstruuje sygnał na podstawie wyników transformacji i porównuje z oryginałem. Dodatkowo wizualizuje części składowe DFT, jak również wpływ zmiany częstotliwości na wyniki transformacji.
