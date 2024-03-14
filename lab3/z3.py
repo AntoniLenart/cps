@@ -91,19 +91,28 @@ for fre in range(len(f)):
         Xbla[fre] += (1/N) * xbla[j] * np.exp(-1j*2*np.pi*f[fre]*j/fs)
         Xche[fre] += (1/N) * xche[j] * np.exp(-1j*2*np.pi*f[fre]*j/fs)
         Xche2[fre] += (1/N) * xche2[j] * np.exp(-1j*2*np.pi*f[fre]*j/fs)
+# Pętla for fre in range(len(f)): Iteruje przez wszystkie wartości częstotliwości w tablicy f. Wartości f zawierają częstotliwości od 0 do częstotliwości próbkowania (fs) z krokiem fs/N.
+#
+# Wewnętrzna pętla for j in range(N): Iteruje przez wszystkie próbki w sygnale.
+#
+# Każde wyrażenie w pętli przypisuje sumę ważoną składników sinusoidalnych do odpowiednich tablic Xbox, Xham, Xbla, Xche, Xche2, które reprezentują transformaty Fouriera dla sygnałów po zastosowaniu różnych okien.
+#
+# W każdej iteracji dodawane są wartości wagowane próbek sygnału (przemnożonych przez odpowiednie okno) przemnożone przez współczynniki eksponencjalne np.exp(-1j*2*np.pi*f[fre]*j/fs). To jest właśnie element transformaty Fouriera.
+#
+# Wartość (1/N) jest stosowana jako normalizacja, aby zapewnić odpowiednią skalę dla wyników transformaty Fouriera.
 
 plt.figure(6)
 plt.plot(f, np.abs(Xbox), "b-", f, np.abs(Xham), "r-", f, np.abs(Xbla), "k-", f, np.abs(Xche), "g-", f, np.abs(Xche2), "m-")
 plt.legend(['Prostokątne', 'Hamminga', 'Blackmana', 'Czebyszewa 100 dB', 'Czebyszewa 120 dB'])
 
-# # Wykresy okien
-# plt.figure(7)
-# plt.title('Okna')
-# plt.plot(f, np.sinc(sample), 'b-')
-# plt.plot(f, np.hamming(N), 'r-')
-# plt.plot(f, np.blackman(N), 'k-')
-# plt.plot(f, windows.chebwin(N, 100), 'g-')
-# plt.plot(f, windows.chebwin(N, 120), 'm-')
-# plt.legend(['Prostokątne', 'Hamminga', 'Blackmana', 'Czebyszewa 100', 'Czebyszewa 120'])
+# Wykresy okien
+plt.figure(7)
+plt.title('Okna')
+plt.plot(f, np.sinc(sample), 'b-')
+plt.plot(f, np.hamming(N), 'r-')
+plt.plot(f, np.blackman(N), 'k-')
+plt.plot(f, windows.chebwin(N, 100), 'g-')
+plt.plot(f, windows.chebwin(N, 120), 'm-')
+plt.legend(['Prostokątne', 'Hamminga', 'Blackmana', 'Czebyszewa 100', 'Czebyszewa 120'])
 
 plt.show()
