@@ -1,0 +1,9 @@
+Motylkowa transformacja Fouriera (ang. butterfly operation) jest kluczowym elementem algorytmu szybkiej transformacji Fouriera (FFT).
+FFT to efektywny sposób obliczania transformacji Fouriera dla sekwencji próbek, których liczba jest potęgą liczby 2.
+Idea motylkowej transformacji Fouriera polega na podziale danych wejściowych na dwie części, które są następnie łączone w procesie iteracyjnym.
+Każda iteracja składa się z operacji "motylków", które obliczają punkty transformacji Fouriera dla danych częściowych
+i łączą je w coraz większe transformacje dla całej sekwencji.
+Nazwa "motylkowa" pochodzi od sposobu, w jaki wyglądają operacje wizualizowane na wykresie przepływu danych,
+gdzie punkty są grupowane w kształcie motyli.
+Ta metoda pozwala znacznie zmniejszyć liczbę potrzebnych operacji w porównaniu z tradycyjnym podejściem,
+co sprawia, że FFT jest znacznie szybsza niż klasyczna transformacja Fouriera, szczególnie dla większych zestawów danych.

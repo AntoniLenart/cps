@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 x = np.random.random(1024)
 
+# Cooley i Tukey 1965 rok
 
 def my_dft(x):
     N = len(x)  # Długość sygnału
@@ -86,3 +87,5 @@ plt.title('X_final Phase Comparison')
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+# https://home.agh.edu.pl/~kkowal/DSP/FFT_wyklad.pdf
