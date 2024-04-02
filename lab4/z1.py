@@ -47,6 +47,12 @@ plt.tight_layout()
 plt.show()
 
 comparison = np.allclose(X_fft, X_np_fft)
+error = np.abs(X_fft - X_np_fft)
+plt.figure()
+plt.plot(error)
+plt.title('Error diagram')
+plt.xlabel('Frequency [Hz]')
+plt.show()
 print(comparison)
 
 
@@ -59,6 +65,7 @@ k = np.arange(N)
 W = np.exp(-2j * np.pi * k / N / 4)
 X_even_even = np.concatenate([X_even + W[:int(N/4)] * X_odd, X_even + W[:int(N/4)] * X_odd])
 
+
 x_odd_even = x_odd[::2]
 x_odd_odd = x_odd[1::2]
 X_even = my_dft(x_odd_even)
@@ -67,9 +74,16 @@ N = len(x)
 k = np.arange(N)
 W = np.exp(-2j * np.pi * k / N)
 X_odd_odd = np.concatenate([X_even + W[:int(N/4)] * X_odd, X_even + W[:int(N/4)] * X_odd])
+
 X_final = np.concatenate([X_even_even + W[:int(N/2)] * X_odd_odd, X_even_even + W[int(N/2):] * X_odd_odd])
 
 comparison = np.allclose(X_fft, X_final)
+error = np.abs(X_fft - X_final)
+plt.figure()
+plt.plot(error)
+plt.title('Error diagram for X_final')
+plt.xlabel('Frequency [Hz]')
+plt.show()
 print(comparison)
 
 # Plotting

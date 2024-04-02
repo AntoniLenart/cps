@@ -63,6 +63,7 @@ for i in range(1, 16):
     etime = time.time()
     one_fft_time.append(etime-stime)
 
+
     stime = time.time()
     X1_fft = np.fft.fft(x1)
     X2_fft = np.fft.fft(x2)
@@ -71,8 +72,8 @@ for i in range(1, 16):
     double_fft_time.append(etime-stime)
 
 plt.figure(3)
-plt.plot(np.arange(len(one_fft_time)), one_fft_time, label='Single FFT time')
-plt.plot(np.arange(len(double_fft_time)), double_fft_time, label='Double FFT time')
+plt.plot(np.arange(len(one_fft_time)), one_fft_time, label='Single FFT time', color='red')
+plt.plot(np.arange(len(double_fft_time)), double_fft_time, label='Double FFT time', color='green')
 plt.xlabel('Powers of 2')
 plt.ylabel('Time')
 plt.legend()

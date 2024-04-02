@@ -60,7 +60,7 @@ plt.xlabel('Częstotliwość [Hz]')
 plt.grid()
 
 plt.subplot(2, 2, 4)
-# plt.phase_spectrum(X, color='green')
+#plt.phase_spectrum(X, color='green')
 plt.plot(freq, phase, color='green')
 plt.title('Faza')
 plt.xlabel('Częstotliwość [Hz]')
@@ -99,6 +99,14 @@ plt.legend()
 plt.grid()
 plt.show()
 
+# Sprawdzenie czy transformata posiada
+# właściwość perfekcyjnej rekonstrukcji
+tol1 = np.max(np.abs(x_t - xr))
+print('1 Rekonstrukcja sygnału z błędem:', tol1)
+
+tol2 = np.max(np.abs(x_t -X))
+print('2 Rekonstrukcja sygnału z błędem:', tol2)
+
 ##########################################################################
 
 f1 = 125
@@ -108,11 +116,11 @@ X_fft = np.fft.fft(x_t)
 x_r_ifft = np.fft.ifft(X_fft)
 
 plt.figure(figsize=(12, 6))
-plt.plot(t, x_t, label='Original Signal x(t)')
-plt.plot(t, x_r_ifft.real, label='Reconstructed Signal x_r', linestyle='--')
-plt.xlabel('Time (seconds)')
-plt.ylabel('Amplitude')
-plt.title('Comparison of Original and Reconstructed Signals')
+plt.plot(t, x_t, label='Oryginalny sygnał x(t)')
+plt.plot(t, x_r_ifft.real, label='Sygnał oddtworzony x_r', linestyle='--')
+plt.xlabel('Czas (s)')
+plt.ylabel('Amplituda')
+plt.title('Porównanie sygnału rzeczywistego i odtworzonego')
 plt.legend()
 plt.grid(True)
 plt.show()
@@ -120,24 +128,24 @@ plt.show()
 real_part = np.real(X_fft)
 imaginary_part = np.imag(X_fft)
 magnitude = np.abs(X_fft)
-phase = np.angle(X_fft)
+#phase = np.angle(X_fft)
 
 fig, axs = plt.subplots(4, 1, figsize=(12, 8))
 
 axs[0].plot(freq, real_part)
 axs[0].set_title('Część rzeczywista')
 axs[0].set_xlabel('Częstotliwość')
-axs[0].set_ylabel('Amplitude')
+axs[0].set_ylabel('Amplituda')
 
 axs[1].plot(freq, imaginary_part)
 axs[1].set_title('Część urojona')
 axs[1].set_xlabel('Częstotliwość')
-axs[1].set_ylabel('Amplitude')
+axs[1].set_ylabel('Amplituda')
 
 axs[2].plot(freq, magnitude)
 axs[2].set_title('Amplituda')
 axs[2].set_xlabel('Częstotliwość')
-axs[2].set_ylabel('Amplitude')
+axs[2].set_ylabel('Amplituda')
 
 axs[3].plot(freq, phase)
 axs[3].set_title('Faza')

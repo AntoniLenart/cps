@@ -1,6 +1,6 @@
 Importuje biblioteki scipy.io do wczytania pliku .mat, NumPy do obliczeń numerycznych i matplotlib.pyplot do rysowania wykresów.
 
-Wczytuje plik 'lab_03.mat', który zawiera zmienną 'x_7' (prawdopodobnie sygnał) za pomocą funkcji scipy.io.loadmat.
+Wczytuje plik 'lab_03.mat', który zawiera zmienną 'x_7'  za pomocą funkcji scipy.io.loadmat.
 
 Określa numer wektora (vector_number) jako resztę z dzielenia 417670 przez 16, z dodatkowym 1. To wydaje się być indeksem do wybrania jednego z wektorów z pliku MAT.
 
