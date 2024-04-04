@@ -1,0 +1,14 @@
+Ten kod również służy do analizy charakterystyk częstotliwościowych systemu dynamicznego, ale w tym przypadku analizowane są różne wartości filtru odbywającego się w dziedzinie częstotliwości.
+
+1. `N_values` to wektor zawierający różne wartości filtru.
+2. `omega_3dB` to częstotliwość odcięcia w skali częstotliwości rzeczywistej.
+3. `w` to wektor zawierający zakres częstotliwości.
+4. Tworzone są puste macierze `ang`, `Hdec` i `Hlin`, które będą przechowywać wyniki analizy.
+5. Następnie, dla każdej wartości N z `N_values`, wykonuje się pętla, w której:
+   - Określane są miejsca zerowe transmitancji (pozostają stałe, gdy zmienia się tylko N),
+   - Wyznaczane są wielomiany transmitancji `a` i `b`,
+   - Obliczane są charakterystyki częstotliwościowe `h` za pomocą funkcji `freqs()`.
+   - Moduł, fazę oraz dekady modułu transmitancji są zapisywane do odpowiednich macierzy.
+6. Następnie rysowane są wykresy charakterystyk częstotliwościowych i fazowych w zależności od częstotliwości oraz wykres odpowiedzi impulsowej i na skok jednostkowy dla filtra o N=4.
+
+Kod ten pozwala na analizę wpływu różnych wartości filtru na charakterystyki częstotliwościowe, co jest przydatne w projektowaniu filtrów i analizie systemów sterowania.

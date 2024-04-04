@@ -42,5 +42,5 @@ xlabel('Częstotliwość [rad/s]');
 ylabel('Kąt [rad]');
 title('Charakterystyka fazowo-częstotliwościowa');
 grid on;
-figure;
-freqs(b,a,w);
+% figure;
+% freqs(b,a,w);

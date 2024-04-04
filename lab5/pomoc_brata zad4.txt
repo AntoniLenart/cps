@@ -1,0 +1,14 @@
+Ten kod implementuje projektowanie filtru za pomocą funkcji bibliotecznej `ellip` w MATLAB. Filtr ten ma wąskie pasmo przejściowe i ma na celu odfiltrowanie sygnału w określonym zakresie częstotliwości.
+
+1. Inicjalizowane są parametry:
+   - `points`: liczba punktów używanych do obliczenia odpowiedzi częstotliwościowej.
+   - `N`: rząd filtru, tutaj ustalony na 4.
+   - `mid_freq_unscaled`: środkowa częstotliwość filtru w nieprzeskalowanych jednostkach (Hz).
+   - `mid_freq`: środkowa częstotliwość filtru w radianach na sekundę.
+   - `tollerance_unscaled`: tolerancja dla pasma filtru w nieprzeskalowanych jednostkach (Hz).
+   - `tollerance`: tolerancja dla pasma filtru w radianach na sekundę.
+   - `w`: wektor częstotliwości, które zostaną użyte do obliczenia odpowiedzi częstotliwościowej.
+2. Następnie, używając funkcji `ellip()`, projektowany jest filtr eliptyczny o zadanym rzędzie, tłumieniu w paśmie tłumienia oraz pasmach przejściowych.
+3. Na podstawie zer, biegunów i wzmocnienia filtru eliptycznego, tworzone są jego współczynniki (`be` i `ae`) przy użyciu funkcji `zp2tf()`.
+4. Odpowiedź częstotliwościowa filtra jest obliczana za pomocą funkcji `freqs()` dla podanego wektora częstotliwości `w`.
+5. Następnie rysowany jest wykres odpowiedzi częstotliwościowej filtra. Oś x jest skalowana do MHz, a oś y przedstawia odpowiedź w dB. Dodatkowo osie są ograniczone do zakresu odpowiadającego środkowej częstotliwości filtru oraz tolerancji pasma.

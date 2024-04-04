@@ -1,0 +1,13 @@
+Ten kod w języku MATLAB służy do analizy systemu dynamicznego opisanego transmitancją.
+
+1. Na początku definiujemy punkty położenia biegunów (\(p12\), \(p34\), \(p56\)) oraz zera (\(z12\), \(z34\)).
+2. Tworzymy wektory zawierające bieguny i zera, a następnie ich sprzężenia zespolone.
+3. Określamy wzmocnienie (\(wzm\)).
+4. Rysujemy na wykresie bieguny i zera.
+5. Tworzymy wielomiany opisujące transmitancję systemu na podstawie biegunów i zer.
+6. Obliczamy odpowiedź częstotliwościową systemu dla zakresu częstotliwości \(w\) i tworzymy wykres modułu transmitancji (\(Hlinear\)).
+7. Tworzymy wykres logarytmu dziesiętnego modułu transmitancji (\(Hlog\)).
+8. Tworzymy wykres charakterystyki fazowej (\(H\_phase\)).
+9. Wywołujemy funkcję `freqs()`, która również oblicza odpowiedź częstotliwościową, ale korzysta z funkcji bibliotecznych do tego celu.
+
+Kod ten wykonuje analizę częstotliwościową systemu, pozwalając zobaczyć jego charakterystyki magnetyczne, fazowe i częstotliwościowe.

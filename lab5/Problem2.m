@@ -26,7 +26,7 @@ hold on;
 grid on;
 wlog = logspace(0,2,20001)
 for row=1:4
-semilogx(w./(2*pi),Hdec(row,:));
+    semilogx(w./(2*pi),Hdec(row,:));
 end
 legend("2","4","6","8");
 title("Charakterystyka A-cz skala logarytmiczna")
@@ -34,7 +34,7 @@ title("Charakterystyka A-cz skala logarytmiczna")
 figure;
 hold on;
 for row=1:4
-plot(w./(2*pi),Hlin(row,:));
+    plot(w./(2*pi),Hlin(row,:));
 end
 legend("2","4","6","8");
 title("Charakterystyka A-cz skala liniowa")
@@ -42,7 +42,7 @@ title("Charakterystyka A-cz skala liniowa")
 figure;
 hold on;
 for row=1:4
-plot(w./(2*pi),ang(row,:));
+    plot(w./(2*pi),ang(row,:));
 end
 legend("2","4","6","8");
 title("Charakterystyka cz-f");

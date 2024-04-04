@@ -1,0 +1,8 @@
+Ten kod implementuje projektowanie filtrów o różnych charakterystykach przy użyciu funkcji bibliotecznych w MATLAB.
+
+1. Najpierw definiowane są cele projektowania filtrów, takie jak maksymalne tłumienie dla \(f > f_s/2\) (gdzie \(f_s\) to częstotliwość próbkowania), minimalny rząd, minimalne zmiany tłumienia w paśmie \(f < 64 \, \text{kHz}\) oraz tłumienie dla \(f_s/2\) nie mniejsze niż 40 dB.
+2. Określana jest częstotliwość próbkowania i maksymalna częstotliwość odcięcia.
+3. Tworzone są różne typy filtrów (Butterworth, Czebyszew typu 1 i 2, Eliptyczny) o różnych parametrach, w tym rządzie i tłumieniu.
+4. Następnie obliczane są odpowiedzi częstotliwościowe tych filtrów dla zadanej częstotliwości próbkowania.
+5. Wykresy pokazujące odpowiedzi częstotliwościowe filtrów dla różnych typów są tworzone i rysowane. Wszystkie wykresy mają wspólne osie, co ułatwia porównanie.
+6. Tworzony jest wykres rozkładu biegunów dla każdego z filtrów, pokazujący ich położenie w płaszczyźnie zespolonej.
