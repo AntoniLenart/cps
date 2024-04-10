@@ -15,8 +15,7 @@ wmax = 2*pi*fmax;
 
 [num_d, den_d] = bilinear(b, a, fs);
 % Wczytanie pliku .wav
-[s, fs] = audioread('s7.wav'); % Zamiast 'sX.wav' wpisz nazwę pliku, który chcesz przefiltrować
-
+[s, fs] = audioread('s7.wav'); 
 % Filtracja sygnału
 filtered_signal = filter(num_d, den_d, s);
 
