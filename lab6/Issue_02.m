@@ -28,7 +28,7 @@ title('Spektrogram przed filtracją');
 % Spektrogram po filtracji
 subplot(2,1,2);
 spectrogram(filtered_signal, 4096, 4096-512, [0:5:2000], fs, 'yaxis');
-title('Spektrogram po filtracją');
+title('Spektrogram po filtracji');
 
 % Wyświetlenie sygnałów w dziedzinie czasu
 figure;
