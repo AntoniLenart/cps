@@ -1,5 +1,5 @@
-close all;
-clear all;
+close all
+clear all
 clc
 
 load("butter.mat")
@@ -13,13 +13,15 @@ wmax = 2*pi*fmax;
 [b,a] = zp2tf(z,p,k);
 
 
-[num_d, den_d] = bilinear(b, a, fs);
+[z_cyf, p_cyf , k_cyf] = bilinear(z, p,k, fs);
+[num_d,den_d] = zp2tf(z_cyf,p_cyf,k_cyf);
 N = 1024; % liczba punktów w charakterystyce
 [H, w] = freqz(num_d, den_d, N, fs);
+
 % Wykres charakterystyki amplitudowo-częstotliwościowej
 figure;
-plot(w, abs(H));
-xlabel('Częstotliwość [rad/s]');
+plot(w*(2*pi), abs(H)); % zmiana na semilogx
+xlabel('Częstotliwość [Hz]');
 ylabel('Amplituda');
 title('Charakterystyka amplitudowo-częstotliwościowa filtru cyfrowego');
 grid on;
@@ -31,13 +33,12 @@ hold off;
 
 
 % Obliczenie charakterystyki amplitudowo-częstotliwościowej dla filtru analogowego
-w = logspace(log10(wmin), log10(wmax), 1000); % równomiernie rozmieszczone częstotliwości w skali logarytmicznej
-Hz = freqs(b, a, w);
+[Hz,wz] = freqs(b, a, w);
 
 % Wykres charakterystyki amplitudowo-częstotliwościowej filtru analogowego
 figure;
-semilogx(w, abs(Hz));
-xlabel('Częstotliwość [rad/s]');
+plot(wz, abs(Hz));
+xlabel('Częstotliwość [Hz]');
 ylabel('Amplituda');
 title('Charakterystyka amplitudowo-częstotliwościowa filtru analogowego');
 grid on;
@@ -107,7 +108,3 @@ plot(t, filtered_signal);
 xlabel('Czas [s]');
 ylabel('Amplituda');
 title('Sygnał cyfrowy po filtracji');
-
-
-
-
