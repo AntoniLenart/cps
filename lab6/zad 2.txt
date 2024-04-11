@@ -1,0 +1,17 @@
+Wczytanie danych z pliku "butter.mat": Wczytuje współczynniki filtru cyfrowego z pliku "butter.mat", prawdopodobnie wcześniej zapisanych.
+
+Definicja parametrów: Ustawia częstotliwość próbkowania fs, minimalną fmin i maksymalną fmax częstotliwość wraz z ich odpowiednikami w radianach na sekundę wmin i wmax.
+
+Konwersja współczynników zero-pole na współczynniki filtru cyfrowego: Zastosowana jest funkcja zp2tf() do przekształcenia współczynników zero-pole (z, p, k) na współczynniki liczby i mianownika transmitancji (b, a) filtru cyfrowego.
+
+Przejście z dziedziny analogowej do cyfrowej: Funkcja bilinear() przekształca współczynniki b i a filtru analogowego na współczynniki num_d i den_d filtru cyfrowego.
+
+Wczytanie pliku audio: Wczytuje sygnał dźwiękowy z pliku audio "s7.wav" za pomocą funkcji audioread(). Zwraca sygnał s oraz jego częstotliwość próbkowania fs.
+
+Filtracja sygnału: Wykorzystuje funkcję filter() do przefiltrowania sygnału audio s za pomocą wcześniej obliczonych współczynników filtru cyfrowego num_d i den_d. Wynik filtracji jest przechowywany w zmiennej filtered_signal.
+
+Generowanie spektrogramu przed i po filtracji: Wyświetla spektrogram sygnału audio przed i po filtracji. Spektrogram to graficzne przedstawienie widma sygnału w zależności od czasu. Używana jest funkcja spectrogram().
+
+Wyświetlenie sygnałów w dziedzinie czasu: Rysuje dwa sygnały - oryginalny (s) i przefiltrowany (filtered_signal) - na jednym wykresie w dziedzinie czasu za pomocą funkcji plot(). Dodaje etykiety osi oraz tytuł wykresu, oraz legendę dla odróżnienia sygnałów przed i po filtracji.
+
+Ten kod przeprowadza filtrację sygnału dźwiękowego za pomocą wcześniej zdefiniowanego filtru cyfrowego, a następnie prezentuje wyniki zarówno w dziedzinie czasu, jak i za pomocą spektrogramów.

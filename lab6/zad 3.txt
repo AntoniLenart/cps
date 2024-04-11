@@ -1,0 +1,37 @@
+Definicja parametrów sygnału radiowego:
+
+fs: Częstotliwość próbkowania.
+N: Liczba próbek (IQ).
+fc: Częstotliwość środkowa stacji MF.
+Wczytanie danych z pliku: Wczytuje surowe dane z pliku "samples_100MHz_fs3200kHz.raw".
+
+Konwersja danych do postaci zespolonej: Rozdziela surowe dane na składowe I i Q, a następnie łączy je w postać zespoloną.
+
+Przesunięcie częstotliwości: Przesuwa sygnał o wybraną częstotliwość fc do pasma podstawowego.
+
+Filtracja dolnoprzepustowa: Filtruje sygnał przesunięty dolnoprzepustowym filtrem Butterwortha.
+
+Próbkowanie do szerokości pasma usługi FM: Dokonuje próbkowania sygnału, aby uzyskać odpowiednią szerokość pasma.
+
+Demodulacja FM: Demoduluje sygnał FM, aby uzyskać sygnał audio.
+
+Filtracja antyaliasingowa: Filtruje sygnał audio, aby usunąć składowe przekraczające częstotliwość Nyquista.
+
+Decymacja do szerokości pasma audio: Przeprowadza decymację sygnału, aby uzyskać szerokość pasma audio.
+
+Normalizacja sygnału: Normalizuje sygnał audio.
+
+Wykresy spektrogramu i widma gęstości mocy:
+
+Generuje spektrogram i widmo gęstości mocy dla oryginalnego sygnału.
+Generuje spektrogram i widmo gęstości mocy dla sygnału po filtracji.
+Generuje spektrogram i widmo gęstości mocy dla sygnału po demodulacji.
+Generuje spektrogram i widmo gęstości mocy dla sygnału po filtracji antyaliasingowej.
+Analiza widma gęstości mocy:
+
+Wykorzystuje funkcję periodogramu do obliczenia widma gęstości mocy.
+Znajduje "górki" na widmie gęstości mocy powyżej pewnego progu.
+Wyświetla "górki" na wykresie.
+Wyświetlanie częstotliwości stacji radiowych: Wyświetla częstotliwości stacji radiowych znajdujących się w sygnale.
+
+Kod ten przeprowadza kompleksową analizę sygnału radiowego, w tym przetwarzanie, demodulację i analizę częstotliwościową, pozwalając na zrozumienie jego zawartości.

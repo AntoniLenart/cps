@@ -1,0 +1,21 @@
+Wczytywanie danych z pliku "butter.mat", który zawiera współczynniki filtru cyfrowego.
+
+Definiowanie częstotliwości próbkowania fs, minimalnej fmin i maksymalnej fmax częstotliwości, oraz ich odpowiedników w radianach na sekundę wmin i wmax.
+
+Konwersja z współczynników zero-pole (z,p,k) na współczynniki liczby i mianownika transmitancji (b, a) filtru cyfrowego.
+
+Przejście z dziedziny analogowej do cyfrowej za pomocą metody bilinearnej.
+
+Obliczenie charakterystyki częstotliwościowej filtru cyfrowego (moduł i faza).
+
+Wykres charakterystyki amplitudowo-częstotliwościowej filtru cyfrowego.
+
+Obliczenie charakterystyki częstotliwościowej filtru analogowego.
+
+Wykres charakterystyki amplitudowo-częstotliwościowej filtru analogowego.
+
+Generowanie dwóch sygnałów harmonicznych o częstotliwościach f1 i f2 oraz ich sumowanie.
+
+Przefiltrowanie sygnału cyfrowego za pomocą własnej metody konwolucji (z użyciem współczynników num_d i den_d) oraz funkcji filter().
+
+Wyświetlenie sygnału cyfrowego oryginalnego i przefiltrowanego zarówno dla własnej metody filtracji, jak i dla funkcji filter().
