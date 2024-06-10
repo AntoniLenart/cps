@@ -12,7 +12,7 @@ rv = 2; [x, y, z, vol] = reducevolume(vol, [rv rv rv]); size(vol) % redukcja obj
 vol = smooth3(vol, 'gaussian', 3);
 
 % Przekształcanie danych do formatu binarnego
-I = find(vol < 335); % TUTAJ ZMIENIAM WARTOSC PROGU, default 200, dla 317 pokazuje sie płuco, dla 335 oba 
+I = find(vol < 315); % TUTAJ ZMIENIAM WARTOSC PROGU, default 200, dla 317 pokazuje sie płuco, dla 335 oba 
 vol = zeros(size(vol)); 
 vol(I) = 1; % ustawienie znalezionych pikseli na wartość 1
 
@@ -58,28 +58,3 @@ camlight;
 toc
 % vol_s=vol; save('vol_s', 'vol_s'), beep
 
-% Dodajemy kod do interpolacji i wizualizacji ścieżki
-
-% Ładowanie danych ścieżki
-load('PTHd.mat');
-points = PTHd;
-
-% Przekształć punkty do formatu odpowiedniego dla funkcji spline
-x = points(:, 1);
-y = points(:, 2);
-z = points(:, 3);
-
-% Interpolacja splajnami
-points = points';
-curve = cscvn(points);
-
-% Generowanie punktów na splajnie
-num_points = 1000; % liczba punktów do wygenerowania na spline
-t_fine = linspace(0, 1, num_points);
-spline_points = fnval(curve, t_fine);
-
-% Dodanie interpolowanej ścieżki jako linia na patch
-hold on;
-plot3(spline_points(1, :), spline_points(2, :), spline_points(3, :), 'r-', 'LineWidth', 2, 'DisplayName', 'Interpolated Path');
-legend;
-hold off;

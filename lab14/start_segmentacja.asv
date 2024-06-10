@@ -22,7 +22,7 @@ vol(I)=1; % ustawienie znalezionych pikseli na wartość 1
 [vol_obj,liczba_obj] = bwlabeln(vol,26); liczba_obj, %figure, hist(vol_obj(:),liczba_obj)
 % Wybór drzewa oskrzelowego na podstawie pierwszego slajdu 
 % Wymagana INTERAKCJA użytkownika do wybrania wlasciwego obiektu
-% pierwszy slajd z etykietami
+% pierwszy właściwy obiekt
 imshow(vol_obj(:,:,1))
 clear vol;
 toc
@@ -48,6 +48,7 @@ close all
 tic
 figure
 hiso = patch(isosurface(abs(vol-1),0),'FaceColor',[1,.75,.65],'EdgeColor','none');
+%hiso =patch(isosurface(vol,1),'FaceColor',[1,.75,.65],'EdgeColor','none');
 axis tight; box on
 camproj p;
 daspect([1 1 1]);
